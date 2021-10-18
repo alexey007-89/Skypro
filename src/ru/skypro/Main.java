@@ -23,10 +23,8 @@ public class Main {
     }
 
     public static void task2() {
-        int day = 1;
-        while (day < 32) {
-            System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
-            day = day + 7;
+        for (int i = 1; i < 32; i += 7) {
+            System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет.");
         }
     }
 
@@ -41,17 +39,14 @@ public class Main {
 
     public static void task4() {
         for (int i = 1; i < 31; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println(i + ": ping pong");
-                continue;
-            } else if (i % 3 == 0) {
-                System.out.println(i + ": ping");
-                continue;
-            } else if (i % 5 == 0) {
-                System.out.println(i + ": pong");
-                continue;
+            System.out.print(i + ": ");
+            if (i % 3 == 0) {
+                System.out.print("ping ");
             }
-            System.out.println(i + ":");
+            if (i % 5 == 0) {
+                System.out.print("pong");
+            }
+            System.out.print("\n");
         }
     }
 
