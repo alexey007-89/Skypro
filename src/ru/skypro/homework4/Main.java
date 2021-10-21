@@ -1,4 +1,4 @@
-package ru.skypro;
+package ru.skypro.homework4;
 
 public class Main {
 
