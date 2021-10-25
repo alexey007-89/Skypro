@@ -1,4 +1,4 @@
-package ru.skypro.homework1;
+package ru.skypro.homework2;
 
 public class main {
     public static void main(String[] args) {
