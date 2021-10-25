@@ -60,9 +60,9 @@ public class hw6 {
     private static void task5() {
         int[][] table = new int[3][3];
         for (int i = 0; i < table.length; i++) {
-            for (int i1 = 0; i1 < table[0].length; i1++) {
-                if ((i + i1) % 2 == 0) {
-                    table[i][i1] = 1;
+            for (int k = 0; k < table[0].length; k++) {
+                if (i == k || (i + k) == table.length - 1) {
+                    table[i][k] = 1;
                 }
             }
         }
@@ -79,8 +79,7 @@ public class hw6 {
         int[] arr2 = new int[arr1.length];
         int j = 0;
         for (int i = arr1.length - 1; i >= 0; i--) {
-            arr2[j] = arr1[i];
-            j++;
+            arr2[j++] = arr1[i];
         }
         System.out.println(Arrays.toString(arr1));
         System.out.println(Arrays.toString(arr2));
@@ -93,8 +92,7 @@ public class hw6 {
         for (int i = 0; i < arr1.length / 2; i++) {
             int temp = arr1[i];
             arr1[i] = arr1[j];
-            arr1[j] = temp;
-            j--;
+            arr1[j--] = temp;
         }
         System.out.println(Arrays.toString(arr1));
     }
