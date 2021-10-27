@@ -30,11 +30,13 @@ public class hw6 {
         String fullName = "Ivanov Ivan Ivanovich";
 //         Вариант 1
         System.out.print("Данные ФИО сотрудника для административного отдела — ");
-        String[] fio = fullName.split(" ");
-        for (int i = 0; i < fio.length - 1; i++) {
-            System.out.print(fio[i] + "; ");
+        String[] words = fullName.split(" ");
+        String changeName = "";
+        for (int i = 0; i < words.length - 1; i++) {
+            changeName += words[i] + "; ";
         }
-        System.out.println(fio[fio.length - 1]);
+        changeName += words[words.length - 1];
+        System.out.println(changeName);
 
 //         Вариант 2
         System.out.println("Данные ФИО сотрудника для административного отдела — " + fullName.replace(' ', ';'));
@@ -73,20 +75,17 @@ public class hw6 {
             }
         }
         System.out.print("Верное написание Ф. И. О. сотрудника с заглавных букв — ");
-        for (char letter : letters) {
-            System.out.print(letter);
-        }
-        System.out.println();
+        String upperName = new String(letters);
+        System.out.println(upperName);
     }
 
     private static void task7() {
         String first = "135";
         String second = "246";
-        StringBuilder sb = new StringBuilder(first);
-        int j = 1;
-        for (int i = 0; i < second.length(); i++) {
-            sb.insert(j, second.charAt(i));
-            j += 2;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < first.length(); i++) {
+            sb.append(first.charAt(i));
+            sb.append(second.charAt(i));
         }
         System.out.println("Данные строки — " + sb);
     }
@@ -94,11 +93,10 @@ public class hw6 {
     private static void task8() {
         String doubleLetter = "aabccddefgghiijjkk";
         char[] abc = doubleLetter.toCharArray();
-        int j = 0;
         StringBuilder answer = new StringBuilder();
         for (int i = 1; i < abc.length; i++) {
             if (abc[i] == abc[i - 1]) {
-                answer.insert(j++, abc[i]);
+                answer.append(abc[i]);
             }
         }
         System.out.println(answer);
