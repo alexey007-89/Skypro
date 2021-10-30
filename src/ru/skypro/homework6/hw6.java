@@ -2,14 +2,14 @@ package ru.skypro.homework6;
 
 public class hw6 {
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-        task4();
+//        task1();
+//        task2();
+//        task3();
+//        task4();
         task5();
-        task6();
-        task7();
-        task8();
+//        task6();
+//        task7();
+//        task8();
     }
 
     private static void task1() {
@@ -57,8 +57,8 @@ public class hw6 {
 
     private static void task5() {
         String fullName = "Ivanov Ivan Ivanovich";
-        String firstName = fullName.substring(fullName.indexOf(' '), fullName.lastIndexOf(' '));
-        String middleName = fullName.substring(fullName.lastIndexOf(' '), fullName.length() - 1);
+        String firstName = fullName.substring(fullName.indexOf(' ') + 1, fullName.lastIndexOf(' '));
+        String middleName = fullName.substring(fullName.lastIndexOf(' ') + 1, fullName.length() - 1);
         String lastName = fullName.substring(0, fullName.indexOf(' '));
         System.out.println("Имя сотрудника — " + firstName);
         System.out.println("Фамилия сотрудника — " + lastName);
