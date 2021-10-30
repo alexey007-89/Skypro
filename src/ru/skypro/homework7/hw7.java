@@ -7,21 +7,21 @@ import static ru.skypro.homework5.hw5.generateRandomArray;
 
 public class hw7 {
     public static void main(String[] args) {
-//        task1();
-//        task2();
-//        task3();
-//        task4();
-//        task5();
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
         task6();
 
     }
 
     public static void task1() {
         int year = 2020;
-        printIsLeap(year);
+        checkLeapAndPrint(year);
     }
 
-    public static void printIsLeap(int year) {
+    public static void checkLeapAndPrint(int year) {
         System.out.print(year);
         if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
             System.out.println(" — високосный год");
@@ -31,20 +31,29 @@ public class hw7 {
     }
 
     public static void task2() {
-        int clientDeviceYear = 2021;
-        int clientOS = 1; // 0 - iOS, 1 - Android
-        needLiteVersion(clientOS, clientDeviceYear);
+        int clientDeviceYear = 2020;
+        int clientOS = 0; // 0 - iOS, 1 - Android
+        printResultMessage(clientDeviceYear, clientOS);
     }
 
-    public static void needLiteVersion(int os, int year) {
+    public static void printResultMessage(int clientDeviceYear, int clientOS) {
+        StringBuilder message = new StringBuilder("Установите ");
+        if (isLight(clientDeviceYear)) {
+            message.append("облегченную ");
+        }
+        message.append("версию приложения для ");
+        if (clientOS == 0) {
+            message.append("iOS ");
+        } else message.append("Android ");
+        message.append("по ссылке");
+        System.out.println(message);
+    }
+
+    public static boolean isLight(int year) {
         int currentYear = LocalDate.now().getYear();
-        if (year >= currentYear) {
-            if (os == 1) {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            } else System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (os == 1) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        if (year == currentYear) {
+            return false;
+        } else return true;
     }
 
     public static void task3() {
