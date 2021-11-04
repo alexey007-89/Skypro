@@ -11,13 +11,11 @@ public class App {
         // средний уровень
 
         Book[] catalog = new Book[7];
-        catalog[0] = voinaIMir;
-        catalog[1] = kapDochka;
+        addBook(catalog, voinaIMir);
+        addBook(catalog, kapDochka);
         Book eOnegin = new Book("Евгений Онегин", aPushkin, 2015);
+        addBook(catalog, eOnegin);
 
-        for (int i = 0; i < 1; i++) {
-            addBook(catalog, eOnegin);
-        }
         printAll(catalog);
 
         System.out.println("*******************************");
@@ -32,20 +30,19 @@ public class App {
         library.printAll();
         library.printAllInfoByName("Евгений Онегин");
         library.changeYearPublicationByName("Евгений Онегин", 2018);
+        System.out.println();
         library.printAll();
 
     }
 
     public static void addBook(Book[] catalog, Book newBook) {
-        boolean isFilled = true;
         for (int i = 0; i < catalog.length; i++) {
             if (catalog[i] == null) {
-                isFilled = false;
                 catalog[i] = newBook;
                 return;
             }
         }
-        if (isFilled) System.out.println("Can't add book, catalog is full");
+        System.out.println("Can't add book, catalog is full");
     }
 
     public static void printAll(Book[] catalog) {

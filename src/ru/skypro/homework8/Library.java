@@ -8,15 +8,13 @@ public class Library {
     }
 
     public void addBook(Book newBook) {
-        boolean isFilled = true;
         for (int i = 0; i < catalog.length; i++) {
             if (catalog[i] == null) {
-                isFilled = false;
                 catalog[i] = newBook;
                 return;
             }
         }
-        if (isFilled) System.out.println("Can't add book, catalog is full");
+        System.out.println("Can't add book, catalog is full");
     }
 
     public void printAll() {
