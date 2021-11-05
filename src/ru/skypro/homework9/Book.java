@@ -3,8 +3,8 @@ package ru.skypro.homework9;
 import java.util.Objects;
 
 public class Book {
-    private String name;
-    private Author author;
+    private final String name;
+    private final Author author;
     private int publishedYear;
 
     public Book(String name, Author author, int publishedYear) {
