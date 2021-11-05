@@ -26,6 +26,10 @@ public class Book {
     }
 
     public void setPublishedYear(int publishedYear) {
+        if (publishedYear < 1950 || publishedYear > 2050) {
+            System.out.println("Invalid publishing year parameter: " + publishedYear);
+            return;
+        }
         this.publishedYear = publishedYear;
     }
 

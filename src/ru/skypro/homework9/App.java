@@ -34,5 +34,7 @@ public class App {
         library.addBook(warAndPeace);
         System.out.println(library);
 
+        library.printAllInfoByName("The Stand");
+
     }
 }
