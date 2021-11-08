@@ -35,6 +35,5 @@ public class App {
         System.out.println(library);
 
         library.printAllInfoByName("The Stand");
-
     }
 }

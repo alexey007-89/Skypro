@@ -27,7 +27,7 @@ public class Library {
     }
 
     public void printAllInfoByName(String bookName) {
-        Book book = findBookByName(bookName, books);
+        Book book = findBookByName(bookName);
         if (book == null) {
             System.out.println("Книга отсутствует в бибилиотеке");
         } else {
@@ -36,19 +36,17 @@ public class Library {
         }
     }
 
-    private Book findBookByName(String bookName, Book[] catalog) {
-        Book book = null;
-        for (Book value : catalog) {
-            if (value != null && value.getName().equals(bookName)) {
-                book = value;
-                break;
+    private Book findBookByName(String bookName) {
+        for (Book book : books) {
+            if (book != null && book.getName().equals(bookName)) {
+                return book;
             }
         }
-        return book;
+        return null;
     }
 
     public void changeYearPublicationByName(String bookName, int publishingYear) {
-        Book book = findBookByName(bookName, books);
+        Book book = findBookByName(bookName);
         if (book == null) {
             System.out.println("Книга отсутствует в бибилиотеке");
         } else {
