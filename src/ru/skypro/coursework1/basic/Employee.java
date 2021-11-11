@@ -1,9 +1,9 @@
 package ru.skypro.coursework1.basic;
 
 public class Employee {
-    private static int counter = 0;
+    private static int counter;
     private final String fullName;
-    private final int id;
+    private final int id = ++counter;
     private int departmentNumber;
     private int salary;
 
@@ -11,7 +11,6 @@ public class Employee {
         this.fullName = fullName;
         this.departmentNumber = departmentNumber;
         this.salary = salary;
-        this.id = ++counter;
     }
 
     public String getFullName() {
